@@ -20,11 +20,10 @@ describe('express', function () {
   });
 
   describe('basic auth', async() => {
-    it('should respond with 200 when called with valid Authorization header value', async () => {
+    it('should respond with 401 when called with no authorization header value', async () => {
       const res = await request(server)
       .get('/basic-auth')
-      .set('Authorization', 'Basic: bWF0dEBnbWFpbC5jb206dGhpcyBpcyBhIHZAbGlkIHBhc3N3b3JkIQ==');
-      expect(res.statusCode).to.equal(200);
+      expect(res.statusCode).to.equal(401);
     });
   })
 });

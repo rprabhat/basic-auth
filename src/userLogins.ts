@@ -1,4 +1,4 @@
-export const USERS = {
+export const VALID_USERS = {
   users: [
     {
       userLogin: 'test@gmail.com',

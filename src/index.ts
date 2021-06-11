@@ -8,11 +8,10 @@ app.get('/status', (req, res) => { res.status(200).end(); });
 app.head('/status', (req, res) => { res.status(200).end(); });
 
 const basicAuthHandler = (req: express.Request, res: express.Response, next: express.NextFunction) => {
-  if (true) {
-    res.set('WWW-Authenticate', 'Basic realm="tech-test-3"')
-    res.status(401).send('Authentication required')
-  }
+  // implementation here
   
+  
+  // authentication succesful, pass request onto next middleware
   next()
 }
 
