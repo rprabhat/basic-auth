@@ -18,3 +18,18 @@ export const VALID_USERS = {
     }
   ]
 }
+
+export type UserAuth = { userLogin: string, password: string} | undefined
+
+interface AuthService {
+  validateUser(user: UserAuth) : boolean 
+}
+
+class DummyAuthService implements AuthService{
+  validateUser(user: UserAuth) : boolean {
+    console.log(user);
+    return VALID_USERS.users.find(u => u.userLogin === user?.userLogin && u.password == user.password) !== undefined;
+  }
+}
+
+export const userService = new DummyAuthService();
